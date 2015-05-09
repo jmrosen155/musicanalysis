@@ -1,0 +1,23 @@
+# SUBSET BY SUM()
+MF: Normalized by user, d = 20, iter = 15, map = 0.0074621106428
+MF: Binary, var = 0.0856755528949, d = 20, iter = 15, map = 0.0118978943545 
+
+# SUBSET BY LEN(), down to 10%
+Baseline = 0.011 (plays) 0.013 (count) 
+Naked KMEANS = 0.000236467603938
+Song-based recommendation = 0.0503182651161
+User-based recommendation = 0.0383330982801
+# See this paper: http://www-personal.umich.edu/~yjli/content/projectreport.pdf
+MF, Norm user, d=20, iter=15 map = 0.00472476189971
+MF, Norm songs, d=20, iter=15 map = 0.00116815607043
+MF, Norm binary, d=20, iter=15 var = 0.08, map = 0.00836514439703
+NMF(Mtrain, 30, rank = 10) maps= 0.00672023777805
+NMF(Mtrain, 30, rank = 25) maps = 0.00758657279673
+
+# With correct MAP measure
+MF: Binary, var = 0.08, d = 15, map = 0.00987264456481
+Naked KMeans, ncl = 10, map = 0.0001
+Baseline (recommend all users top 500 most popular songs) = 0.012 (plays) 0.013 (count) 
+Song-based recommendation = 0.0503182651161, 0.0474175707054, 0.0459195070524
+User-based recommendation = 0.0383330982801, 0.0383677247442, 0.0362726415037
+Artist-based + popularity baseline = 0.045178165140778104, 0.04532721040211922, 0.043941921597422905
