@@ -1,37 +1,5 @@
-# musicanalysis
-Working with lastfm data to cluster like artists together based on genre and user plays. 
+#Music Recommendation System using the Million Song Dataset (last.fm)
 
-# data
-http://www.dtic.upf.edu/~ocelma/MusicRecommendationDataset/
+Used collaborative filtering algorithms that utilize user feedback in order to predict what songs users may like. For benchmarking the algorithms, we used a Mean Average Precision score truncated at 500 recommended songs. It was discovered that probabilistic matrix factorization with a MAP value of 0.014 did not improve results much from using a baseline of simply recommending popular songs, while artist-based popularity along with user-based and item-based collaborative filtering methods yielded much better results, with the best method giving a MAP value of 0.048.
 
-usersha1-profile.tsv
-userhash
-gender
-age
-country
-join date
-
-usersha1-artmbid-artname-plays.tsv
-userhash
-artist_musicbrainz_id
-artistname
-plays
-
-359349 unique user hashes
-160168 unique artist hashes
-17559530 rows
-
-```
->>> 17559530/float(359347*(186642+107373))
-0.00016619937111663383
-```
-# kaggle data
-kaggle_visible_evaluation.txt
-
-110000 unique user hashes
-163206 unique song hashes
-1450934 rows
-```
->>> 1450934/float(n*m)
-8.082000104719857e-05
-```
+*[Write-Up](https://cdn.rawgit.com/jmrosen155/coursework/master/Modeling%20Social%20Data/Music%20Analysis%20Project/MSDgroupwriteup.pdf)*
